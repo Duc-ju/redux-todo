@@ -17,8 +17,9 @@ function Filter() {
       </div>
       <div>
         <div>
-          <label>Tất cả</label>
+          <label htmlFor='All'>Tất cả</label>
           <input
+            id={'All'}
             type='radio'
             checked={filters.status === 'All'}
             onChange={() =>
@@ -27,8 +28,9 @@ function Filter() {
           />
         </div>
         <div>
-          <label>Đã hoàn thành</label>
+          <label htmlFor='Completed'>Đã hoàn thành</label>
           <input
+            id={'Completed'}
             type='radio'
             checked={filters.status === 'Completed'}
             onChange={() =>
@@ -37,8 +39,9 @@ function Filter() {
           />
         </div>
         <div>
-          <label>Chưa hoàn thành</label>
+          <label htmlFor='unCompleted'>Chưa hoàn thành</label>
           <input
+            id='unCompleted'
             type='radio'
             checked={filters.status === 'Uncompleted'}
             onChange={() =>
