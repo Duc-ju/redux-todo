@@ -1,4 +1,4 @@
-import { changeFilterSearch, changeFilterCompleted } from '../redux/actions';
+import filtersSlice from '../redux/filtersSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { filterSelector } from '../redux/selectors';
 function Filter() {
@@ -10,7 +10,9 @@ function Filter() {
         <input
           placeholder='Nhập từ khoá'
           value={filters.search}
-          onChange={(e) => dispatch(changeFilterSearch(e.target.value))}
+          onChange={(e) =>
+            dispatch(filtersSlice.actions.changeFilterSearch(e.target.value))
+          }
         />
       </div>
       <div>
@@ -19,7 +21,9 @@ function Filter() {
           <input
             type='radio'
             checked={filters.status === 'All'}
-            onChange={() => dispatch(changeFilterCompleted('All'))}
+            onChange={() =>
+              dispatch(filtersSlice.actions.changeFilterCompleted('All'))
+            }
           />
         </div>
         <div>
@@ -27,7 +31,9 @@ function Filter() {
           <input
             type='radio'
             checked={filters.status === 'Completed'}
-            onChange={() => dispatch(changeFilterCompleted('Completed'))}
+            onChange={() =>
+              dispatch(filtersSlice.actions.changeFilterCompleted('Completed'))
+            }
           />
         </div>
         <div>
@@ -35,7 +41,11 @@ function Filter() {
           <input
             type='radio'
             checked={filters.status === 'Uncompleted'}
-            onChange={() => dispatch(changeFilterCompleted('Uncompleted'))}
+            onChange={() =>
+              dispatch(
+                filtersSlice.actions.changeFilterCompleted('Uncompleted')
+              )
+            }
           />
         </div>
       </div>

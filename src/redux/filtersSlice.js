@@ -1,23 +1,17 @@
-const initialState = {
-  search: '',
-  status: 'All',
-};
+import { createSlice } from '@reduxjs/toolkit';
 
-const filtersSlice = (state = initialState, action) => {
-  switch (action.type) {
-    case 'filter/changeFilterSearch':
-      return {
-        ...state,
-        search: action.payload,
-      };
-    case 'filter/changeFilterCompleted':
-      return {
-        ...state,
-        status: action.payload,
-      };
-    default:
-      return state;
-  }
-};
-
-export default filtersSlice;
+export default createSlice({
+  name: 'filters',
+  initialState: {
+    search: '',
+    status: 'All',
+  },
+  reducers: {
+    changeFilterSearch: (state, action) => {
+      state.search = action.payload;
+    },
+    changeFilterCompleted: (state, action) => {
+      state.status = action.payload;
+    },
+  },
+});

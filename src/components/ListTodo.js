@@ -1,13 +1,13 @@
 import { useSelector } from 'react-redux';
 import { todoRemainingSelectior } from '../redux/selectors';
-import { toggleCompletedTodoAction } from '../redux/actions';
+import todoListSlice from '../redux/todoListSlice';
 import { useDispatch } from 'react-redux';
 
 function ListTodo() {
   const dispatch = useDispatch();
   const todoList = useSelector(todoRemainingSelectior);
   const handleCompletedTodo = (todoId) => {
-    dispatch(toggleCompletedTodoAction(todoId));
+    dispatch(todoListSlice.actions.toggleCompleted(todoId));
   };
   return (
     <div>

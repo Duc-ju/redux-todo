@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addTodoAction } from '../redux/actions';
+import todoListSlice from '../redux/todoListSlice';
 import { v4 as uuidv4 } from 'uuid';
 
 function Control() {
@@ -8,7 +8,7 @@ function Control() {
   const dispatch = useDispatch();
   const handleAddButtonClick = () => {
     dispatch(
-      addTodoAction({
+      todoListSlice.actions.addTodo({
         id: uuidv4(),
         name: todo,
         completed: false,
