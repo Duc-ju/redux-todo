@@ -17,7 +17,7 @@ function Control() {
     setTodo('');
   };
   return (
-    <div>
+    <div style={{ border: '1px solid black' }}>
       <input
         placeholder='Nhập công việc'
         value={todo}

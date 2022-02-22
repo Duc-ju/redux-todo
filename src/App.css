@@ -1,4 +1,7 @@
 * {
-  padding: 0;
-  margin: 4px;
+  padding: 4px;
+  margin: 0;
+}
+.line-through {
+  text-decoration: line-through;
 }

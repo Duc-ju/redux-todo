@@ -5,7 +5,7 @@ import ListTodo from './components/ListTodo';
 
 function App() {
   return (
-    <div style={{ padding: '40px' }}>
+    <div style={{ width: '400px', textAlign: 'center', margin: 'auto' }}>
       <Filter />
       <ListTodo />
       <Control />

@@ -5,7 +5,7 @@ function Filter() {
   const dispatch = useDispatch();
   const filters = useSelector(filterSelector);
   return (
-    <div>
+    <div style={{ border: '1px solid black' }}>
       <div>
         <input
           placeholder='Nhập từ khoá'

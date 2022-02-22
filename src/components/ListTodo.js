@@ -13,12 +13,18 @@ function ListTodo() {
     <div>
       <ul>
         {todoList.map((todo) => (
-          <li key={todo.id} style={{ display: 'flex', alignItems: 'center' }}>
-            <h2>{todo.name}</h2>
-            <p>{todo.completed ? 'Đã hoàn thành' : 'Chưa hoàn thành'}</p>
+          <li
+            key={todo.id}
+            style={{ display: 'flex', alignItems: 'center' }}
+            className={todo.completed ? 'line-through' : ''}
+          >
+            <label htmlFor={todo.id}>
+              <h4>{todo.name}</h4>
+            </label>
             <input
               type='checkbox'
               checked={todo.completed}
+              id={todo.id}
               onChange={() => {
                 handleCompletedTodo(todo.id);
               }}
